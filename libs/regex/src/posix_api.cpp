@@ -18,7 +18,6 @@
 
 #define BOOST_REGEX_SOURCE
 
-#include <boost/config.hpp>
 #include <cstdio>
 #include <boost/regex.hpp>
 #include <boost/cregex.hpp>
@@ -125,7 +124,7 @@ BOOST_REGEX_DECL int BOOST_REGEX_CCALL regcompA(regex_tA* expression, const char
 #endif
       expression->re_magic = magic_value;
       static_cast<c_regex_type*>(expression->guts)->set_expression(ptr, p2, flags);
-      expression->re_nsub = static_cast<c_regex_type*>(expression->guts)->mark_count();
+      expression->re_nsub = static_cast<c_regex_type*>(expression->guts)->mark_count() - 1;
       result = static_cast<c_regex_type*>(expression->guts)->error_code();
 #ifndef BOOST_NO_EXCEPTIONS
    } 

@@ -39,6 +39,10 @@
 namespace boost {
 namespace archive {
 
+template class detail::archive_serializer_map<naked_xml_wiarchive>;
+template class basic_xml_iarchive<naked_xml_wiarchive> ;
+template class xml_wiarchive_impl<naked_xml_wiarchive> ;
+
 template class detail::archive_serializer_map<xml_wiarchive>;
 template class basic_xml_iarchive<xml_wiarchive> ;
 template class xml_wiarchive_impl<xml_wiarchive> ;

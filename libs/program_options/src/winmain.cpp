@@ -7,8 +7,6 @@
 #include <boost/program_options/parsers.hpp>
 #include <cctype>
 
-using std::size_t;
-
 #ifdef _WIN32
 namespace boost { namespace program_options {
 
@@ -91,7 +89,7 @@ namespace boost { namespace program_options {
     {
         std::vector<std::wstring> result;
         std::vector<std::string> aux = split_winmain(to_internal(cmdline));
-        for (size_t i = 0, e = aux.size(); i < e; ++i)
+        for (unsigned i = 0, e = aux.size(); i < e; ++i)
             result.push_back(from_utf8(aux[i]));
         return result;        
     }
